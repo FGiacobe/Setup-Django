@@ -1,0 +1,31 @@
+{% load static %}
+{% load django_htmx %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>InSght |
+      {% block title %}
+        Página
+      {% endblock title %}
+    </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description"
+          content="InSght CRM - Customer Relationship Management System" />
+    <meta name="keywords"
+          content="CRM, customer relationship management, sales, customers, dashboard" />
+    {% htmx_script %}
+
+    {% include "partials/head.html" %}
+
+  </head>
+  <body class="font-sans text-gray-200 leading-normal tracking-normal">
+    {% block content %}
+    {% endblock content %}
+
+    {% include "partials/scripts-body.html" %}
+
+  </body>
+</html>

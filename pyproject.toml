@@ -1,0 +1,83 @@
+[project]
+name = "insghtapp"
+version = "0.1.0"
+description = "" # TODO: Add a short description of your project
+authors = [
+    { name = "Fábio Giacobe", email = "fabiogiacobe@gmailcom" }
+]
+readme = "README.md"
+license = { file = "LICENSE" } # TODO: Add your license file
+
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "django>=5.2.3",
+    "django-cotton>=2.1.2",
+    "django-htmx>=1.23.1",
+    "djlint>=1.36.4",
+    "pandas>=2.3.0",
+    "psycopg[binary]>=3.2.9",
+    "pyarrow>=20.0.0",
+    "pytest-django>=4.11.1",
+    "requests>=2.32.4",
+]
+
+[dependency-groups]
+dev = [
+    "django-browser-reload>=1.18.0",
+    "djlint>=1.36.4",
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+    "ruff>=0.12.0",
+    "taskipy>=1.14.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["migrations", "settings.py", "asgi.py", "wsgi.py", "manage.py"]
+
+[tool.ruff.lint]
+preview = true
+select = ["I", "F", "E", "W", "PL", "PT"]
+ignore = ["PLR2004"]
+
+[tool.ruff.lint.extend-per-file-ignores]
+# Also ignore `E402` in all `__init__.py` files.
+"test_*.py" = ["PLR6301"]
+
+[tool.ruff.format]
+preview = true
+quote-style = "single"
+
+[tool.djlint]
+profile = "django"
+indent = 2
+max_line_length = 120
+blank_line_after_tag = "load,extends,include"
+blank_line_before_tag = "load,extends,include"
+close_void_tags = true
+use_gitignore = true
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings"
+python_files = ["core/**/test_*.py", "core/**/*_test.py", "core/**/tests_*.py", "core/**/*_tests.py"]
+addopts = ["-p", "no:warnings", "--strict-markers"]
+markers = [
+        "slow: mark test as slow",
+        "fast = mark test as fast",
+        "integration = mark test as integration",
+        "unit = mark test as unit"
+]
+
+[tool.taskipy.tasks]
+run = "python manage.py runserver"
+createsuperuser = "python manage.py createsuperuser"
+startapp = "python ../manage.py startapp"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
+pre_test = "task lint"
+tests = "pytest -s -x --cov=datavis -vv"
+lint = "ruff check .; ruff check . --diff; djlint . --check"
+format = "ruff check . --fix; ruff format .; djlint . --reformat"

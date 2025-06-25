@@ -1,0 +1,40 @@
+{
+  "recommendations": [
+    // Language Support
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.debugpy",
+    "ms-python.isort",
+
+    // Copilot and AI Tools
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+
+    // Docker Support
+    "ms-vscode-remote.remote-containers",
+    "ms-azuretools.vscode-docker",
+    "ms-azuretools.vscode-containers",
+
+    // Linting and Formatting
+    "charliermarsh.ruff",
+    "formulahendry.auto-rename-tag",
+    "junstyle.vscode-django-support",
+    "dbaeumer.vscode-eslint",
+    "tamasfe.even-better-toml",
+    "ecmel.vscode-html-css",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "VisualStudioExptTeam.intellicode-api-usage-examples",
+    "VisualStudioExptTeam.vscodeintellicode-completions",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "monosans.djlint",
+
+    // Git and Version Control
+    "Gruntfuggly.todo-tree",
+
+    // Theme
+    "magicstack.Chromodynamics",
+    "atommaterial.a-file-icon-vscode",
+    "MS-CEINTL.vscode-language-pack-pt-BR"
+  ]
+}

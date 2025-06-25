@@ -1,0 +1,152 @@
+{
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "Victor Mono",
+  "editor.fontSize": 12,
+  "editor.lineHeight": 1.6,
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.guides.bracketPairs": "active",
+  "editor.rulers": [80, 120],
+  "explorer.compactFolders": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  // Estilo personalizado para tokens
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "variable",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#e06c75"
+        }
+      },
+      {
+        "scope": "variable.parameter",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#d19a66"
+        }
+      },
+      {
+        "scope": "entity.name.function",
+        "settings": {
+          "fontStyle": "italic bold",
+          "foreground": "#61afef"
+        }
+      },
+      {
+        "scope": "entity.name.class",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#c678dd"
+        }
+      },
+      {
+        "scope": "keyword",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#cc3b3b"
+        }
+      },
+      {
+        "scope": "string.quoted",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#80858d"
+        }
+      },
+      {
+        "scope": "string.quoted.double",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#98c379"
+        }
+      },
+      {
+        "scope": "meta.function-call",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#3aad1d"
+        }
+      },
+      {
+        "scope": "meta",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#afac00"
+        }
+      },
+      {
+        "scope": "keyword.control.import",
+        "settings": {
+          "fontStyle": "italic bold",
+          "foreground": "#bf53fd"
+        }
+      },
+      {
+        "scope": "source",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#9d85f5"
+        }
+      },
+      {
+        "scope": "string.quoted.docstring",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#808ea1"
+        }
+      }
+    ]
+  },
+  "todo-tree.general.tags": ["BUG", "FEATURE", "FIXME", "TODO"],
+  "todo-tree.highlights.customHighlight": {
+    "BUG": {
+      "icon": "bug",
+      "type": "text",
+      "foreground": "#cacaca",
+      "background": "#850000"
+    },
+    "FEATURE": {
+      "icon": "tools",
+      "type": "text",
+      "foreground": "#cacaca",
+      "background": "#006310"
+    },
+    "FIXME": {
+      "icon": "flame",
+      "type": "text",
+      "foreground": "#cacaca",
+      "background": "#850085"
+    },
+    "TODO": {
+      "icon": "check",
+      "type": "text",
+      "foreground": "#cacaca",
+      "background": "#00afa1"
+    }
+  },
+  "terminal.integrated.fontFamily": "Ubuntu Mono",
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.lineHeight": 1.4,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.extraPaths": ["./core"],
+  "python.analysis.autoIndent": true,
+  "python.analysis.importFormat": "absolute",
+  "python.autoComplete.extraPaths": ["./venv/lib/python3.13/site-packages"],
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // Django and HTML formatting
+  "djlint.useVenv": true,
+  "[html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.formatOnSave": true
+  },
+  "[django-html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.formatOnSave": true
+  }
+}
