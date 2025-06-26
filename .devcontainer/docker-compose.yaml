@@ -1,0 +1,16 @@
+services:
+  app:
+    image: django-app:v0.0.3
+    container_name: django-app
+    build:
+      context: ..
+      dockerfile: .devcontainer/python.Dockerfile
+    volumes:
+      - ..:/app:rw
+    ports:
+      - "8000:8000"
+    # BUG #1: The environment variables are not being loaded correctly.
+    env_file:
+      - ../environments/.env
+
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]

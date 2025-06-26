@@ -1,0 +1,15 @@
+# Ambientes virtuais
+.venv
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Arquivos e pastas que não devem ir pro container
+.ruff_cache
+.env
+*.log
+*.sqlite3
+node_modules/
+dist/
+build/
